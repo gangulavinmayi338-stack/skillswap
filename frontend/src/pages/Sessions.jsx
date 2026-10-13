@@ -70,6 +70,7 @@ function Sessions() {
       setSkills(response.data);
     } catch (error) {
       console.error(error);
+      setMessage("Unable to load available skills. Please refresh and try again.");
     }
   };
 
@@ -356,7 +357,7 @@ function Sessions() {
                   required
                 >
                   <option value="">
-                    Select skill
+                    {skills.length ? "Select skill" : "No skills available"}
                   </option>
 
                   {skills.map((skill) => (

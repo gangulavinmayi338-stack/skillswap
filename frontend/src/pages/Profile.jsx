@@ -54,6 +54,7 @@ function Profile() {
       setAllSkills(response.data);
     } catch (error) {
       console.error(error);
+      setMessage("Unable to load available skills. Please refresh and try again.");
     }
   };
 
@@ -358,7 +359,7 @@ function Profile() {
                 required
               >
                 <option value="">
-                  Select skill
+                  {allSkills.length ? "Select skill" : "No skills available"}
                 </option>
 
                 {allSkills.map((skill) => (
