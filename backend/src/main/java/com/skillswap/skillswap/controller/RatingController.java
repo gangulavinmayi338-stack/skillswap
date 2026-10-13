@@ -10,7 +10,7 @@ import java.util.Map;
 
 @RestController
 @RequestMapping("/api")
-@CrossOrigin(origins = "http://localhost:5173")
+@CrossOrigin(origins = "${APP_FRONTEND_URL:http://localhost:5173}")
 public class RatingController {
 
     private final RatingService ratingService;

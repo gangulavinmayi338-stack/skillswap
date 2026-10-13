@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import Navbar from "../components/Navbar";
-import api from "../services/api";
+import api, { webSocketBaseUrl } from "../services/api";
 import "./SessionRoom.css";
 
 function SessionRoom() {
@@ -56,7 +56,7 @@ function SessionRoom() {
   }, [sessionId]);
 
   useEffect(() => {
-    const socket = new WebSocket(`ws://localhost:8080/ws/classroom?sessionId=${sessionId}&userId=${userId}`);
+    const socket = new WebSocket(`${webSocketBaseUrl}/ws/classroom?sessionId=${sessionId}&userId=${userId}`);
     socketRef.current = socket;
 
     socket.onopen = () => {

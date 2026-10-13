@@ -76,6 +76,46 @@ npm run dev
 
 Frontend: `http://localhost:5173`
 
+## Deploy with Render and Vercel
+
+The backend runs as a Docker web service on Render. The React/Vite frontend is
+deployed separately to Vercel. Create a MySQL database that is reachable from
+Render; the Render blueprint does not provision a database.
+
+1. Push this repository to GitHub.
+2. Create a managed MySQL database with a publicly reachable TLS connection and
+   create a database named `skillswap`.
+3. In Render, choose **New → Blueprint**, connect this repository, and deploy
+   the `render.yaml` blueprint. Set the prompted `DB_URL`, `DB_USERNAME`, and
+   `DB_PASSWORD` values. For `APP_FRONTEND_URL`, enter the temporary origin
+   `https://placeholder.vercel.app`; replace it with the real Vercel origin in
+   step 6. For `DB_URL`, use the provider's JDBC URL, for example
+   `jdbc:mysql://HOST:3306/skillswap?sslMode=REQUIRED&serverTimezone=UTC`.
+   Render does not provide a managed MySQL service.
+4. In Vercel, import the same GitHub repository and set the project root
+   directory to `frontend`. Use the Vite framework preset, `npm run build` as the
+   build command, and `dist` as the output directory.
+5. Add the Vercel project environment variable `VITE_API_URL`, set to
+   `https://YOUR-RENDER-SERVICE.onrender.com/api`, then deploy or redeploy the
+   frontend.
+6. Once Vercel provides the production URL, set Render's `APP_FRONTEND_URL` to
+   that exact HTTPS origin (for example, `https://YOUR-PROJECT.vercel.app`) and
+   redeploy/restart the Render service.
+7. Verify `https://YOUR-RENDER-SERVICE.onrender.com/api/health`, then test
+   registration, login, direct messages, and the interactive classroom over
+   HTTPS/WebSockets.
+
+The Vite setting also configures both WebSocket connections to use `wss://`
+when the Render API uses HTTPS. The backend accepts browser and WebSocket
+requests only from the configured frontend origin. Set local frontend
+configuration by copying `frontend/.env.example` to `frontend/.env.local`.
+
+**Demo/security note:** This project seeds a public demo administrator account
+with the credentials shown below and currently permits API requests without
+server-side authentication. Do not use real or sensitive data, or expose this
+deployment as a production service, until the demo credentials and API
+authorization are hardened.
+
 ## Admin account
 
 - Email: `admin@skillswap.com`

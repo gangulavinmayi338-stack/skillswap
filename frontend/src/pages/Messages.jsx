@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import Navbar from "../components/Navbar";
-import api from "../services/api";
+import api, { webSocketBaseUrl } from "../services/api";
 import "./Messages.css";
 
 function Messages(){
@@ -10,7 +10,7 @@ function Messages(){
  useEffect(()=>{selectedRef.current=selected;if(selected)loadMessages(selected.id)},[selected]);
  useEffect(()=>{endRef.current?.scrollIntoView({behavior:"smooth"})},[messages]);
  useEffect(()=>{loadConnections()},[userId]);
- useEffect(()=>{if(!userId)return; const ws=new WebSocket(`ws://localhost:8080/ws/messages?userId=${userId}`); socketRef.current=ws; ws.onopen=()=>ws.send(JSON.stringify({type:"presence-request"})); ws.onmessage=e=>{try{const data=JSON.parse(e.data);if(data.type==="presence"){setOnline(p=>({...p,[data.userId]:data.online}));return;}if(data.type==="typing"||data.type==="stop-typing"){setTyping(p=>({...p,[data.from]:data.type==="typing"}));return;}if(data.type==="new-message"){const from=Number(data.from);if(selectedRef.current?.id===from)loadMessages(from);else setUnread(p=>({...p,[from]:(p[from]||0)+1}));}}catch{}}; return()=>ws.close()},[userId]);
+ useEffect(()=>{if(!userId)return; const ws=new WebSocket(`${webSocketBaseUrl}/ws/messages?userId=${userId}`); socketRef.current=ws; ws.onopen=()=>ws.send(JSON.stringify({type:"presence-request"})); ws.onmessage=e=>{try{const data=JSON.parse(e.data);if(data.type==="presence"){setOnline(p=>({...p,[data.userId]:data.online}));return;}if(data.type==="typing"||data.type==="stop-typing"){setTyping(p=>({...p,[data.from]:data.type==="typing"}));return;}if(data.type==="new-message"){const from=Number(data.from);if(selectedRef.current?.id===from)loadMessages(from);else setUnread(p=>({...p,[from]:(p[from]||0)+1}));}}catch{}}; return()=>ws.close()},[userId]);
  const loadConnections=async()=>{try{const r=await api.get(`/connections/${userId}`);const list=r.data.filter(c=>c.status==="ACCEPTED").map(c=>Number(c.sender?.id)===userId?c.receiver:c.sender);setUsers(list);if(list.length&&!selectedRef.current)setSelected(list[0]);}catch{setError("Unable to load connections.")}};
  const loadMessages=async other=>{try{const r=await api.get(`/messages/${userId}/${other}`);setMessages(r.data);setUnread(p=>({...p,[other]:0}));}catch{setError("Unable to load messages.")}};
  const signal=(payload)=>{if(socketRef.current?.readyState===WebSocket.OPEN)socketRef.current.send(JSON.stringify(payload))};

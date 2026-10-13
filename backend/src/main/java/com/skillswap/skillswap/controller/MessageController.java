@@ -10,7 +10,7 @@ import java.util.Map;
 
 @RestController
 @RequestMapping("/api/messages")
-@CrossOrigin(origins = "http://localhost:5173")
+@CrossOrigin(origins = "${APP_FRONTEND_URL:http://localhost:5173}")
 public class MessageController {
 
     private final MessageService messageService;

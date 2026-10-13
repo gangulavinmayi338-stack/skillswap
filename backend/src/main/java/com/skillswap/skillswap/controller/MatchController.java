@@ -9,7 +9,7 @@ import java.util.Map;
 
 @RestController
 @RequestMapping("/api/matches")
-@CrossOrigin(origins = "http://localhost:5173")
+@CrossOrigin(origins = "${APP_FRONTEND_URL:http://localhost:5173}")
 public class MatchController {
 
     private final MatchingService matchingService;
