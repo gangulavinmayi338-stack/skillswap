@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@CrossOrigin(origins = "${APP_FRONTEND_URL:http://localhost:5173}")
+@CrossOrigin(origins = {"http://localhost:5173", "https://skillswap-puce-xi.vercel.app", "${APP_FRONTEND_URL:http://localhost:5173}"})
 public class AvailabilityController {
 
     private final AvailabilityService availabilityService;

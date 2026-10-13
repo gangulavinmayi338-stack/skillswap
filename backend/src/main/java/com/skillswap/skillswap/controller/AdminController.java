@@ -5,7 +5,7 @@ import com.skillswap.skillswap.repository.*;
 import org.springframework.web.bind.annotation.*;
 import java.util.*;
 
-@RestController @RequestMapping("/api/admin") @CrossOrigin(origins="${APP_FRONTEND_URL:http://localhost:5173}")
+@RestController @RequestMapping("/api/admin") @CrossOrigin(origins = {"http://localhost:5173", "https://skillswap-puce-xi.vercel.app", "${APP_FRONTEND_URL:http://localhost:5173}"})
 public class AdminController {
     private final UserRepository users; private final SessionRepository sessions; private final SkillRepository skills; private final ConnectionRepository connections; private final RatingRepository ratings; private final QuizAttemptRepository attempts;
     public AdminController(UserRepository users,SessionRepository sessions,SkillRepository skills,ConnectionRepository connections,RatingRepository ratings,QuizAttemptRepository attempts){this.users=users;this.sessions=sessions;this.skills=skills;this.connections=connections;this.ratings=ratings;this.attempts=attempts;}

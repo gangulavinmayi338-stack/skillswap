@@ -10,7 +10,7 @@ import java.util.Map;
 
 @RestController
 @RequestMapping("/api/session-room")
-@CrossOrigin(origins = "${APP_FRONTEND_URL:http://localhost:5173}")
+@CrossOrigin(origins = {"http://localhost:5173", "https://skillswap-puce-xi.vercel.app", "${APP_FRONTEND_URL:http://localhost:5173}"})
 public class SessionRoomController {
     private final SessionRoomService service;
     private final SessionLiveService liveService;

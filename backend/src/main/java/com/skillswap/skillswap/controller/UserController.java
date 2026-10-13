@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/users")
-@CrossOrigin(origins = "${APP_FRONTEND_URL:http://localhost:5173}")
+@CrossOrigin(origins = {"http://localhost:5173", "https://skillswap-puce-xi.vercel.app", "${APP_FRONTEND_URL:http://localhost:5173}"})
 public class UserController {
 
     private final UserService userService;

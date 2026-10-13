@@ -28,10 +28,18 @@ public class WebSocketConfig implements WebSocketConfigurer {
     public void registerWebSocketHandlers(WebSocketHandlerRegistry registry) {
         registry
                 .addHandler(messageWebSocketHandler, "/ws/messages")
-                .setAllowedOrigins(frontendUrl);
+                .setAllowedOrigins(
+                        "http://localhost:5173",
+                        "https://skillswap-puce-xi.vercel.app",
+                        frontendUrl
+                );
 
         registry
                 .addHandler(liveClassWebSocketHandler, "/ws/classroom")
-                .setAllowedOrigins(frontendUrl);
+                .setAllowedOrigins(
+                        "http://localhost:5173",
+                        "https://skillswap-puce-xi.vercel.app",
+                        frontendUrl
+                );
     }
 }

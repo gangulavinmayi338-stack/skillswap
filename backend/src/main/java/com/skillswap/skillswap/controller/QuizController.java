@@ -8,7 +8,7 @@ import java.util.*;
 
 @RestController
 @RequestMapping("/api/quizzes")
-@CrossOrigin(origins="${APP_FRONTEND_URL:http://localhost:5173}")
+@CrossOrigin(origins = {"http://localhost:5173", "https://skillswap-puce-xi.vercel.app", "${APP_FRONTEND_URL:http://localhost:5173}"})
 public class QuizController {
     private final QuizService service;
     public QuizController(QuizService service){ this.service=service; }
