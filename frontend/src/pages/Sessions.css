@@ -1,0 +1,334 @@
+.sessions-page {
+  min-height: 100vh;
+  background-color: #f8fafc;
+}
+
+.sessions-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 45px 25px 70px;
+}
+
+.sessions-header {
+  margin-bottom: 30px;
+}
+
+.sessions-label {
+  color: #4f46e5;
+  font-size: 14px;
+  font-weight: 700;
+  margin-bottom: 7px;
+}
+
+.sessions-header h1 {
+  font-size: 34px;
+  margin-bottom: 8px;
+}
+
+.sessions-header > p:last-child {
+  color: #6b7280;
+}
+
+.sessions-message {
+  padding: 12px 15px;
+  margin-bottom: 20px;
+
+  background-color: #eef2ff;
+  color: #4338ca;
+
+  border-radius: 8px;
+}
+
+.session-create-card {
+  background-color: white;
+
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+
+  padding: 28px;
+
+  margin-bottom: 35px;
+}
+
+.session-create-card h2 {
+  margin-bottom: 22px;
+}
+
+.session-form-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, 1fr);
+
+  gap: 20px;
+}
+
+.session-field {
+  display: flex;
+  flex-direction: column;
+
+  gap: 7px;
+}
+
+.session-field label {
+  font-size: 14px;
+  font-weight: 600;
+
+  color: #374151;
+}
+
+.session-field input,
+.session-field select {
+  padding: 11px 12px;
+
+  border: 1px solid #d1d5db;
+
+  border-radius: 8px;
+
+  outline: none;
+
+  background-color: white;
+}
+
+.session-field input:focus,
+.session-field select:focus {
+  border-color: #4f46e5;
+}
+
+.create-session-btn {
+  margin-top: 22px;
+
+  border: none;
+
+  background-color: #4f46e5;
+
+  color: white;
+
+  padding: 12px 22px;
+
+  border-radius: 8px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+.create-session-btn:hover {
+  background-color: #4338ca;
+}
+
+.sessions-list-section h2 {
+  margin-bottom: 20px;
+}
+
+.sessions-list {
+  display: flex;
+  flex-direction: column;
+
+  gap: 16px;
+}
+
+.session-card {
+  background-color: white;
+
+  border: 1px solid #e5e7eb;
+
+  border-radius: 14px;
+
+  padding: 22px;
+}
+
+.session-card-main {
+  display: flex;
+
+  align-items: flex-start;
+  justify-content: space-between;
+
+  gap: 20px;
+}
+
+.session-skill {
+  color: #4f46e5;
+
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.session-card h3 {
+  margin-top: 5px;
+  margin-bottom: 8px;
+}
+
+.session-card p {
+  color: #6b7280;
+
+  font-size: 14px;
+
+  margin-bottom: 5px;
+}
+
+.session-status {
+  padding: 7px 12px;
+
+  border-radius: 20px;
+
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.session-status.requested {
+  background-color: #fef3c7;
+  color: #92400e;
+}
+
+.session-status.confirmed {
+  background-color: #dbeafe;
+  color: #1d4ed8;
+}
+
+.session-status.completed {
+  background-color: #dcfce7;
+  color: #15803d;
+}
+
+.session-status.cancelled {
+  background-color: #fee2e2;
+  color: #b91c1c;
+}
+
+.session-actions {
+  display: flex;
+
+  gap: 10px;
+
+  margin-top: 18px;
+}
+
+.session-confirm-btn,
+.session-secondary-btn {
+  padding: 9px 16px;
+
+  border-radius: 8px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+.session-confirm-btn {
+  border: none;
+
+  background-color: #4f46e5;
+
+  color: white;
+}
+
+.session-secondary-btn {
+  background-color: white;
+
+  border: 1px solid #d1d5db;
+
+  color: #374151;
+}
+
+.sessions-empty {
+  background-color: white;
+
+  border: 1px solid #e5e7eb;
+
+  padding: 35px;
+
+  border-radius: 12px;
+
+  text-align: center;
+
+  color: #6b7280;
+}
+
+@media (max-width: 700px) {
+  .session-form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .session-card-main {
+    flex-direction: column;
+  }
+}
+.session-rate-btn {
+  border: none;
+  background-color: #fef3c7;
+  color: #92400e;
+
+  padding: 9px 16px;
+  border-radius: 8px;
+
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.session-rate-btn:hover {
+  background-color: #fde68a;
+}
+
+.rating-form {
+  margin-top: 20px;
+
+  padding: 20px;
+
+  background-color: #f8fafc;
+
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+}
+
+.rating-form h3 {
+  margin-bottom: 12px;
+}
+
+.rating-stars-input {
+  display: flex;
+  gap: 5px;
+
+  margin-bottom: 15px;
+}
+
+.star {
+  border: none;
+  background: transparent;
+
+  color: #d1d5db;
+
+  font-size: 30px;
+
+  cursor: pointer;
+}
+
+.star.active {
+  color: #f59e0b;
+}
+
+.rating-form textarea {
+  width: 100%;
+
+  padding: 11px 12px;
+
+  border: 1px solid #d1d5db;
+
+  border-radius: 8px;
+
+  resize: vertical;
+
+  outline: none;
+}
+
+.rating-form textarea:focus {
+  border-color: #4f46e5;
+}
+
+.rating-form-actions {
+  display: flex;
+  gap: 10px;
+
+  margin-top: 12px;
+}
+.session-room-btn{border:none;background:#ede9fe;color:#5b21b6;padding:9px 16px;border-radius:8px;font-weight:700;cursor:pointer}.session-room-btn:hover{background:#ddd6fe}

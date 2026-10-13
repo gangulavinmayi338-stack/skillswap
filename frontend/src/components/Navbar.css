@@ -1,0 +1,163 @@
+.navbar {
+  width: 100%;
+  min-height: 70px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 4%;
+
+  background-color: #ffffff;
+
+  border-bottom: 1px solid #e5e7eb;
+
+  box-sizing: border-box;
+
+  position: sticky;
+  top: 0;
+
+  z-index: 1000;
+}
+
+.navbar-logo a {
+  text-decoration: none;
+
+  font-size: 26px;
+  font-weight: 700;
+
+  color: #4f46e5;
+
+  white-space: nowrap;
+}
+
+.navbar-links {
+  display: flex;
+  align-items: center;
+
+  gap: 22px;
+}
+
+.logged-in-links {
+  gap: 16px;
+}
+
+.navbar-links a {
+  text-decoration: none;
+
+  color: #374151;
+
+  font-size: 14px;
+  font-weight: 500;
+
+  transition: 0.2s;
+
+  white-space: nowrap;
+}
+
+.navbar-links a:hover {
+  color: #4f46e5;
+}
+
+.navbar-links .register-btn {
+  color: white;
+
+  background-color: #4f46e5;
+
+  padding: 10px 20px;
+
+  border-radius: 8px;
+}
+
+.navbar-links .register-btn:hover {
+  background-color: #4338ca;
+  color: white;
+}
+
+.navbar-user {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 36px;
+
+  padding: 0 12px;
+
+  background-color: #eef2ff;
+
+  color: #4338ca;
+
+  border-radius: 20px;
+
+  font-size: 13px;
+  font-weight: 700;
+
+  white-space: nowrap;
+}
+
+.logout-btn {
+  border: none;
+
+  background-color: #fee2e2;
+
+  color: #b91c1c;
+
+  padding: 9px 14px;
+
+  border-radius: 8px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  white-space: nowrap;
+}
+
+.logout-btn:hover {
+  background-color: #fecaca;
+}
+
+@media (max-width: 1200px) {
+
+  .navbar {
+    align-items: flex-start;
+
+    padding-top: 18px;
+    padding-bottom: 18px;
+
+    gap: 20px;
+  }
+
+  .logged-in-links {
+    flex-wrap: wrap;
+
+    justify-content: flex-end;
+  }
+}
+
+@media (max-width: 750px) {
+
+  .navbar {
+    flex-direction: column;
+
+    align-items: stretch;
+
+    padding: 16px 20px;
+  }
+
+  .navbar-logo {
+    text-align: center;
+  }
+
+  .navbar-links {
+    flex-wrap: wrap;
+
+    justify-content: center;
+
+    gap: 12px;
+  }
+
+  .navbar-links a {
+    font-size: 13px;
+  }
+}

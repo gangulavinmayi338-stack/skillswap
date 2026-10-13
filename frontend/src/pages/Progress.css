@@ -1,0 +1,266 @@
+.progress-page {
+  min-height: 100vh;
+  background-color: #f8fafc;
+}
+
+.progress-container {
+  max-width: 1150px;
+  margin: 0 auto;
+  padding: 45px 25px 70px;
+}
+
+.progress-header {
+  margin-bottom: 30px;
+}
+
+.progress-label {
+  color: #4f46e5;
+  font-size: 14px;
+  font-weight: 700;
+  margin-bottom: 7px;
+}
+
+.progress-header h1 {
+  font-size: 34px;
+  margin-bottom: 8px;
+}
+
+.progress-header > p:last-child {
+  color: #6b7280;
+}
+
+.progress-stats {
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, 1fr);
+
+  gap: 18px;
+
+  margin-bottom: 30px;
+}
+
+.progress-stat-card {
+  background-color: white;
+
+  border: 1px solid #e5e7eb;
+
+  border-radius: 14px;
+
+  padding: 22px;
+}
+
+.progress-stat-card span {
+  color: #6b7280;
+  font-size: 13px;
+}
+
+.progress-stat-card h2 {
+  font-size: 32px;
+
+  margin-top: 8px;
+
+  color: #111827;
+}
+
+.progress-grid {
+  display: grid;
+
+  grid-template-columns:
+    1fr 1fr;
+
+  gap: 22px;
+}
+
+.progress-card {
+  background-color: white;
+
+  border: 1px solid #e5e7eb;
+
+  border-radius: 16px;
+
+  padding: 26px;
+
+  margin-bottom: 22px;
+}
+
+.progress-card h2 {
+  margin-bottom: 20px;
+}
+
+.learned-skills-list {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 10px;
+}
+
+.learned-skills-list span {
+  padding: 8px 12px;
+
+  border-radius: 8px;
+
+  background-color: #eef2ff;
+
+  color: #4338ca;
+
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.learning-goals-list {
+  display: flex;
+  flex-direction: column;
+
+  gap: 12px;
+}
+
+.learning-goal-item {
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 13px;
+
+  border: 1px solid #e5e7eb;
+
+  border-radius: 10px;
+}
+
+.learning-goal-item span {
+  color: #6b7280;
+
+  font-size: 12px;
+}
+
+.recent-session-list {
+  display: flex;
+  flex-direction: column;
+
+  gap: 12px;
+}
+
+.recent-session-item {
+  display: flex;
+
+  justify-content: space-between;
+
+  gap: 20px;
+
+  padding: 15px;
+
+  border: 1px solid #e5e7eb;
+
+  border-radius: 10px;
+}
+
+.recent-session-item p {
+  margin-top: 5px;
+
+  color: #6b7280;
+
+  font-size: 13px;
+}
+
+.recent-session-meta {
+  display: flex;
+  flex-direction: column;
+
+  text-align: right;
+
+  gap: 6px;
+
+  color: #6b7280;
+
+  font-size: 12px;
+}
+
+.ratings-list {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 15px;
+}
+
+.rating-item {
+  border: 1px solid #e5e7eb;
+
+  border-radius: 10px;
+
+  padding: 15px;
+}
+
+.rating-stars {
+  color: #f59e0b;
+
+  font-size: 18px;
+
+  margin-bottom: 8px;
+}
+
+.rating-item p {
+  color: #374151;
+
+  margin-bottom: 8px;
+
+  line-height: 1.5;
+}
+
+.rating-item span {
+  color: #6b7280;
+
+  font-size: 12px;
+}
+
+.progress-empty {
+  padding: 25px;
+
+  text-align: center;
+
+  background-color: #f8fafc;
+
+  color: #6b7280;
+
+  border-radius: 10px;
+}
+
+.progress-loading,
+.progress-error {
+  padding: 60px;
+
+  text-align: center;
+
+  font-size: 18px;
+}
+
+.progress-error {
+  color: #b91c1c;
+}
+
+@media (max-width: 900px) {
+  .progress-stats {
+    grid-template-columns:
+      repeat(2, 1fr);
+  }
+
+  .progress-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 550px) {
+  .progress-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .recent-session-item {
+    flex-direction: column;
+  }
+
+  .recent-session-meta {
+    text-align: left;
+  }
+}

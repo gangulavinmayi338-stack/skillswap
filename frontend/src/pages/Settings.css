@@ -1,0 +1,91 @@
+.settings-page {
+  min-height: 100vh;
+  background-color: #f8fafc;
+}
+
+.settings-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 45px 25px 70px;
+}
+
+.settings-header {
+  margin-bottom: 30px;
+}
+
+.settings-header > p {
+  color: #4f46e5;
+  font-size: 14px;
+  font-weight: 700;
+  margin-bottom: 7px;
+}
+
+.settings-header h1 {
+  font-size: 34px;
+  margin-bottom: 8px;
+}
+
+.settings-header span {
+  color: #6b7280;
+}
+
+.settings-card {
+  background-color: white;
+
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+
+  padding: 26px;
+
+  margin-bottom: 22px;
+}
+
+.settings-card h2 {
+  margin-bottom: 20px;
+}
+
+.settings-row {
+  display: flex;
+  justify-content: space-between;
+
+  gap: 20px;
+
+  padding: 14px 0;
+
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.settings-row:last-child {
+  border-bottom: none;
+}
+
+.settings-row span {
+  color: #6b7280;
+}
+
+.settings-description {
+  color: #6b7280;
+
+  margin-bottom: 18px;
+
+  line-height: 1.5;
+}
+
+.settings-logout-btn {
+  border: none;
+
+  background-color: #dc2626;
+  color: white;
+
+  padding: 11px 20px;
+
+  border-radius: 8px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+.settings-logout-btn:hover {
+  background-color: #b91c1c;
+}
